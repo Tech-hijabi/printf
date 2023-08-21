@@ -11,15 +11,13 @@ int rep_format(char specifier, va_list list)
 	int count = 0;
 	char *str;
 
-	if (specifier == '\0')
-		return (0);
 	if (specifier == 'c')
 		count += _putchar(va_arg(list, int));
 	else if (specifier == 's')
 	{
 		str = va_arg(list, char *);
 
-		if (str == '\0')
+		if (*str == '\0')
 			return (-1);
 
 		while (*str)
