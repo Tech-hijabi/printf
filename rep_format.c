@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
 * rep_format - This replaces specifiers with corresponding data type
 * @specifier: characters to be checked to execute conditionals
@@ -17,6 +16,10 @@ int rep_format(char specifier, va_list list)
 	else if (specifier == 's')
 	{
 		str = va_arg(list, char *);
+
+		if (str == NULL)
+			return (-1);
+
 		while (*str)
 		{
 			count += _putchar(*str);
