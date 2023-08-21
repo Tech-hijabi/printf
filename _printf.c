@@ -18,21 +18,17 @@ int _printf(const char *format, ...)
 
 	while (format[i] != '\0')
 	{
-
 		if (format[i] == '%')
-
 		{
 			count += rep_format(format[++i], list);
 		}
-
 		else
 		{
 			count += _putchar(format[i]);
 		}
-
 		i++;
 	}
-		va_end(list);
-		return (count);
+	va_end(list);
+	return (count);
 }
 
