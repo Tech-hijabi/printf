@@ -17,7 +17,7 @@ int rep_format(char specifier, va_list list)
 	{
 		str = va_arg(list, char *);
 
-		if (*str == '\0')
+		if (*str == NULL)
 			return (-1);
 
 		while (*str)
