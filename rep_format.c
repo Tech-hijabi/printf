@@ -25,8 +25,10 @@ int rep_format(char specifier, va_list list)
 			str++;
 		}
 	}
-	else if (specifier == 'd' || specifier == 'i')
-			count += _putint(va_arg(list, int));
+	else if (specifier == 'd')
+		count += _putint(va_arg(list, int));
+	else if (specifier == 'i')
+		count += _putint(va_arg(list, int));
 	else if (specifier == '%')
 		count += _putchar('%');
 	else
