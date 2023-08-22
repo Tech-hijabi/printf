@@ -8,7 +8,7 @@
 
 int _putoct(unsigned int n)
 {
-	char buffer[32];
+	char buffer[BUFF_SIZE];
 	int length = 0;
 	int i;
 

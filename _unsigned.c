@@ -8,7 +8,7 @@
 
 int _unint(unsigned int n)
 {
-	char buffer[20];
+	char buffer[BUFF_SIZE];
 	int length = 0;
 	int i;
 

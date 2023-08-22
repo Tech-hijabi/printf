@@ -1,5 +1,5 @@
-#ifndef _HEADER_
-#define _HEADER_
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdarg.h>
@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <limits.h>
+#define BUFF_SIZE 1024
 
 int _printf(const char *format, ...);
 

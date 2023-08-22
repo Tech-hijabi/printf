@@ -8,7 +8,7 @@
 
 int _putHex(unsigned int n)
 {
-	char buffer[20];
+	char buffer[BUFF_SIZE];
 	int length = 0;
 	int remainder;
 	int i;
@@ -39,5 +39,5 @@ int _putHex(unsigned int n)
 		write(1, &buffer[i], 1);
 }
 
-	return (length + 2);
+	return (length);
 }
