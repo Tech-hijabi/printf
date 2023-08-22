@@ -13,23 +13,27 @@ int rep_format(char specifier, va_list list)
 
 	if (specifier == '\0')
 		return (0);
-	if (specifier == 'c')
-		count += _putchar(va_arg(list, int));
-	else if (specifier == 's')
-	{
-		str = va_arg(list, char *);
-
-		while (*str)
-		{
-			count += _putchar(*str);
-			str++;
-		}
-	}
-	else if (specifier == '%')
-		count += _putchar('%');
 	else
 	{
-		count += _putchar(specifier);
+		if (specifier == 'c')
+			count += _putchar(va_arg(list, int));
+		else if (specifier == 's')
+		{
+			str = va_arg(list, char *);
+
+			while (*str)
+			{
+				count += _putchar(*str);
+				str++;
+			}
+		}
+		else if (specifier == '%')
+			count += _putchar('%');
+		else
+		{
+			count += _putchar(specifier);
+		}
+		specifier++;
 	}
 	return (count);
 }
