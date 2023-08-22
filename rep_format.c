@@ -19,11 +19,6 @@ int rep_format(char specifier, va_list list)
 	{
 		str = va_arg(list, char *);
 
-<<<<<<< HEAD
-		if (*str == NULL)
-			return (-1);
-
->>>>>>> 9b01681bd941eda2453ccce7c106bc43b05745d5
 		while (*str)
 		{
 			count += _putchar(*str);
