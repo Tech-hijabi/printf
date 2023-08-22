@@ -13,6 +13,7 @@ int rep_format(char specifier, va_list list)
 
 	if (specifier == '\0')
 		return (0);
+
 	if (specifier == 'c')
 		count += _putchar(va_arg(list, int));
 	else if (specifier == 's')
@@ -27,10 +28,23 @@ int rep_format(char specifier, va_list list)
 
 	}
 	else if (specifier == 'd' || specifier == 'i')
-			count += _putint(va_arg(list, int));
+		count += _putint(va_arg(list, int));
+	else if (specifier == 'b')
+		count += _putbin(va_arg(list, int));
+	else if (specifier == 'x')
+		count += _puthex(va_arg(list, int));
+	else if (specifier == 'X')
+		count += _putHex(va_arg(list, int));
+	else if (specifier == 'u')
+		count += _unint(va_arg(list, int));
+	else if (specifier == 'o')
+		count += _putoct(va_arg(list, int)); 
 	else if (specifier == '%')
 		count += _putchar('%');
 	else
+	{
 		count += _putchar(specifier);
+	}
+	
 	return (count);
 }
