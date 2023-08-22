@@ -24,11 +24,10 @@ int rep_format(char specifier, va_list list)
 			count += _putchar(*str);
 			str++;
 		}
+		count += _putchar('\0');
 	}
-	else if (specifier == 'd')
-		count += _putint(va_arg(list, int));
-	else if (specifier == 'i')
-		count += _putint(va_arg(list, int));
+	else if (specifier == 'd' || specifier == 'i')
+			count += _putint(va_arg(list, int));
 	else if (specifier == '%')
 		count += _putchar('%');
 	else
