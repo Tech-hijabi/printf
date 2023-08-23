@@ -31,6 +31,8 @@ int _putoct(unsigned int n);
 
 int _unint(unsigned int n);
 
+int _putmem(unsigned long int n);
+
 int print_custom_string(char *str);
 
 char *_itoa(int value, char *buffer, int radix);

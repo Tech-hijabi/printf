@@ -9,7 +9,9 @@
 int rep_format(char specifier, va_list list)
 {
 	int count = 0;
+	unsigned long n = 0;
 	char *str, *str2;
+	void *ptr;
 
 	if (specifier == '\0')
 		return (0);
@@ -43,6 +45,14 @@ int rep_format(char specifier, va_list list)
 	{
 		str2 = va_arg(list, char *);
 		count += print_custom_string(str2);
+	}
+	else if (specifier == 'p')
+	{
+		ptr = va_arg(list, void *);
+		n = (unsigned long int)ptr;
+		count += _putchar('0');
+		count += _putchar('x');
+		count += _putmem(n);
 	}
 	else if (specifier == '%')
 		count += _putchar('%');
