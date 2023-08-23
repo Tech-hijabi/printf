@@ -9,7 +9,7 @@
 int rep_format(char specifier, va_list list)
 {
 	int count = 0;
-	char *str;
+	char *str, *str2;
 
 	if (specifier == '\0')
 		return (0);
@@ -38,7 +38,12 @@ int rep_format(char specifier, va_list list)
 	else if (specifier == 'u')
 		count += _unint(va_arg(list, int));
 	else if (specifier == 'o')
-		count += _putoct(va_arg(list, int)); 
+		count += _putoct(va_arg(list, int));
+	else if (specifier == 'S')
+	{
+		str2 = va_arg(list, char *);
+		count += print_custom_string(str2);
+	}
 	else if (specifier == '%')
 		count += _putchar('%');
 	else
